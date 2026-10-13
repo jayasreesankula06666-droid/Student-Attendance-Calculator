@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="logo" aria-hidden="true">📚</div>
+      <p class="eyebrow">STUDENT TOOL</p>
+      <h1>Attendance Calculator</h1>
+      <p class="subtitle">Check your attendance percentage in seconds.</p>
+    </header>
+
+    <section class="calculator" aria-labelledby="calculator-title">
+      <h2 id="calculator-title">Enter attendance details</h2>
+      <form id="attendance-form">
+        <label for="student-name">Student name <span>(optional)</span></label>
+        <input id="student-name" type="text" placeholder="Enter your name" maxlength="80">
+
+        <div class="field-row">
+          <div class="field">
+            <label for="total-classes">Total classes held</label>
+            <input id="total-classes" type="number" min="1" step="1" placeholder="e.g. 100" required>
+          </div>
+          <div class="field">
+            <label for="attended-classes">Classes attended</label>
+            <input id="attended-classes" type="number" min="0" step="1" placeholder="e.g. 85" required>
+          </div>
+        </div>
+
+        <label for="required-percent">Required attendance (%)</label>
+        <input id="required-percent" type="number" min="1" max="100" step="1" value="75" required>
+
+        <button type="submit">Calculate attendance</button>
+        <button type="button" id="reset-button" class="secondary">Reset</button>
+      </form>
+      <p id="error-message" class="error" role="alert" hidden></p>
+
+      <section id="result" class="result" aria-live="polite" hidden>
+        <p class="result-label">Attendance result</p>
+        <h2 id="result-name">Your attendance</h2>
+        <p class="percentage" id="percentage">0%</p>
+        <div class="progress-track" role="progressbar" aria-label="Attendance percentage" aria-valuemin="0" aria-valuemax="100" id="progress-track">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p id="status-message" class="status"></p>
+        <p id="attendance-tip" class="tip"></p>
+      </section>
+    </section>
+
+    <footer>
+      <p>Student Attendance Calculator · Built with HTML, CSS &amp; JavaScript</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
